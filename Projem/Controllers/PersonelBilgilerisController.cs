@@ -91,7 +91,7 @@ namespace Projem.Controllers
             return View(personelBilgileri);
         }
 
-        // GET: PersonelBilgileris/Delete/5
+        // GET: PersonelBilgileris/Delete/5324234
         public ActionResult Delete(int? id)
         {
             if (id == null)

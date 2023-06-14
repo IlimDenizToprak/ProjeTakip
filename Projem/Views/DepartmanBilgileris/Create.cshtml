@@ -1,0 +1,32 @@
+﻿@model Projem.Models.Departman.DepartmanBilgileri
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card mb-4">
+    <h5 class="card-header">Departman Ekle</h5>
+    <!-- Account -->
+
+    <hr class="my-0">
+    <div class="card-body">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                    @Html.LabelFor(model => model.DepartmanAdi, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <input class="form-control" type="text" name="DepartmanAdi" id="DepartmanAdi" />
+                    @Html.ValidationMessageFor(model => model.DepartmanAdi, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="mt-2">
+                <a href="/DepartmanBilgileris/Index"><button type="button" class="btn rounded-pill btn-warning">Anasayfaya Dön</button></a>
+                <button type="submit" class="btn rounded-pill btn-primary">Ekle</button>
+
+            </div>
+        }
+    </div>
+    <!-- /Account -->
+</div>

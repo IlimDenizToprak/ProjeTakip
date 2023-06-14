@@ -1,0 +1,24 @@
+﻿@model Projem.Models.Departman.DepartmanBilgileri
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card mb-4">
+    <h5 class="card-header">Departman Detay</h5>
+
+    <hr class="my-0">
+    <div class="card-body">
+
+        <div class="row">
+            <div class="mb-3 col-md-6">
+                <b>@Html.DisplayNameFor(model => model.DepartmanAdi):</b>
+                @Html.DisplayFor(model => model.DepartmanAdi)
+            </div>
+        </div>
+        <a href="/DepartmanBilgileris/Index"><button type="button" class="btn rounded-pill btn-warning">Anasayfaya Dön</button></a>
+    </div>
+    <!-- /Account -->
+</div>
+

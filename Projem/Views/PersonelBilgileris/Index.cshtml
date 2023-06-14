@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Projem.Models.Personel.PersonelBilgileri>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+                <h5 class="card-header">Personel Listesi</h5>
+                <div class="table-responsive text-nowrap">
+                    <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th>
+                                    
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.AdSoyad)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Eposta)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TelNo)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Yetki)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Departman)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Gorev)
+                                </th>
+                                <th>
+                                    İşlem
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-border-bottom-0">
+                            @{
+                                var i = 1;
+                            }
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@i</td>
+                                    <td>@Html.DisplayFor(modelItem => item.AdSoyad)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Eposta)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.TelNo)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Yetki)</td>
+                                    <td><span class="badge bg-label-danger me-1">@Html.DisplayFor(modelItem => item.Departman)</span></td>
+                                    <td>@Html.DisplayFor(modelItem => item.Gorev)</td>
+
+                                    <td>
+                                        <a href="/PersonelBilgileris/Edit/@item.PersonelBilgileriId"><button style="margin-right:5px" type="button" class="btn btn-icon btn-primary"><span class="tf-icons bx bx-edit-alt"></span></button></a>
+                                        <a href="/PersonelBilgileris/Details/@item.PersonelBilgileriId"><button style="margin-right:5px" type="button" class="btn btn-icon btn-info"><span class="tf-icons bx bx-detail"></span></button></a>
+                                        <a href="/PersonelBilgileris/Delete/@item.PersonelBilgileriId"><button style="margin-right:5px" type="button" class="btn btn-icon btn-danger"><span class="tf-icons bx bx-trash"></span></button></a>
+                                        <a href="/PersonelBilgileris/HareketFoyu/@item.PersonelBilgileriId"><button style="margin-right:5px" type="button" class="btn btn-icon btn-warning"><span class="tf-icons bx bx-history"></span></button></a>
+                                    </td>
+                                </tr>
+                                i++;
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+              </div>

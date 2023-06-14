@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Projem.Models.Departman.DepartmanBilgileri>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="card">
+    <h5 class="card-header">Departman Listesi</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>
+                       
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DepartmanAdi)
+                    </th>
+                    <th>
+                        İşlem
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                @{
+                    var i = 1;
+                }
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td>@Html.DisplayFor(modelItem => item.DepartmanAdi)</td>
+
+                        <td>
+                            <a href="/DepartmanBilgileris/Edit/@item.DepartmanBilgileriId"><button style="margin-right:5px" type="button" class="btn btn-icon btn-primary"><span class="tf-icons bx bx-edit-alt"></span></button></a>
+                            <a href="/DepartmanBilgileris/Details/@item.DepartmanBilgileriId"><button style="margin-right:5px" type="button" class="btn btn-icon btn-info"><span class="tf-icons bx bx-detail"></span></button></a>
+                            <a href="/DepartmanBilgileris/Delete/@item.DepartmanBilgileriId"><button style="margin-right:5px" type="button" class="btn btn-icon btn-danger"><span class="tf-icons bx bx-trash"></span></button></a>
+
+                        </td>
+                    </tr>
+                    i++;
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

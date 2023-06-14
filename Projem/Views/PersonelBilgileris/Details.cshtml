@@ -1,0 +1,84 @@
+﻿@model Projem.Models.Personel.PersonelBilgileri
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card mb-4">
+    <h5 class="card-header">Profil Detay</h5>
+  
+    <hr class="my-0">
+    <div class="card-body">
+   
+        <div class="row">
+            <div class="mb-3 col-md-6">
+                <b>@Html.DisplayNameFor(model => model.Eposta):</b>
+                @Html.DisplayFor(model => model.Eposta)
+            </div>
+            <div class="mb-3 col-md-6">
+                <b>@Html.DisplayNameFor(model => model.Yetki):</b>
+                @Html.DisplayFor(model => model.Yetki)
+            </div>
+            <div class="mb-3 col-md-6">
+                <b>@Html.DisplayNameFor(model => model.AdSoyad):</b>
+                @Html.DisplayFor(model => model.AdSoyad)
+            </div>
+            <div class="mb-3 col-md-6">
+                <b>@Html.DisplayNameFor(model => model.TCNO):</b>
+                @Html.DisplayFor(model => model.TCNO)
+            </div>
+            <div class="mb-3 col-md-6">
+                <b>@Html.DisplayNameFor(model => model.Departman):</b>
+                @Html.DisplayFor(model => model.Departman)
+            </div>
+            <div class="mb-3 col-md-6">
+                <b>@Html.DisplayNameFor(model => model.Gorev):</b>
+                @Html.DisplayFor(model => model.Gorev)
+            </div>
+            <div class="mb-3 col-md-6">
+                <b>@Html.DisplayNameFor(model => model.PozisyonAciklama):</b>
+                @Html.DisplayFor(model => model.PozisyonAciklama)
+            </div>
+            <div class="mb-3 col-md-6">
+                <b>@Html.DisplayNameFor(model => model.TelNo):</b>
+                @Html.DisplayFor(model => model.TelNo)
+            </div>
+            <div class="mb-3 col-md-6">
+                <b>@Html.DisplayNameFor(model => model.Adres):</b>
+                @Html.DisplayFor(model => model.Adres)
+            </div>
+            <div class="mb-3 col-md-6">
+                <b>@Html.DisplayNameFor(model => model.MedeniHal):</b>
+                @Html.DisplayFor(model => model.MedeniHal)
+            </div>
+            <div class="mb-3 col-md-6">
+                <b>@Html.DisplayNameFor(model => model.YakinBilgisi):</b>
+                @Html.DisplayFor(model => model.YakinBilgisi)
+            </div>
+            <div class="mb-3 col-md-6">
+                <b>@Html.DisplayNameFor(model => model.YakinTC):</b>
+                @Html.DisplayFor(model => model.YakinTC)
+            </div>
+            <div class="mb-3 col-md-6">
+                <b>@Html.DisplayNameFor(model => model.YakinAdSoyad):</b>
+                @Html.DisplayFor(model => model.YakinAdSoyad)
+            </div>
+            <div class="mb-3 col-md-6">
+                <b>@Html.DisplayNameFor(model => model.YakinTel):</b>
+                @Html.DisplayFor(model => model.YakinTel)
+            </div>
+            <div class="mb-3 col-md-6">
+                <b>@Html.DisplayNameFor(model => model.DogumTarihi):</b>
+                @Html.DisplayFor(model => model.DogumTarihi)
+            </div>
+            <div class="mb-3 col-md-6">
+                <b>@Html.DisplayNameFor(model => model.IseGirisTarihi):</b>
+                @Html.DisplayFor(model => model.IseGirisTarihi)
+            </div>
+        </div>
+        <a href="/PersonelBilgileris/Index"><button type="button" class="btn rounded-pill btn-warning">Anasayfaya Dön</button></a>
+    </div>
+    <!-- /Account -->
+</div>
+

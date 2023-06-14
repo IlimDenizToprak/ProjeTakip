@@ -1,0 +1,121 @@
+﻿@model Projem.Models.Personel.PersonelBilgileri
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card mb-4">
+    <h5 class="card-header">Personel Ekle</h5>
+    <!-- Account -->
+
+    <hr class="my-0">
+    <div class="card-body">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                    @Html.LabelFor(model => model.Eposta, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <input class="form-control" type="text" name="Eposta" id="Eposta" />
+                    @Html.ValidationMessageFor(model => model.Eposta, "", new { @class = "text-danger" })
+                </div>
+                <div class="mb-3 col-md-6">
+                    @Html.LabelFor(model => model.Sifre, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <input class="form-control" type="password" name="Sifre" id="Sifre" />
+                    @Html.ValidationMessageFor(model => model.Sifre, "", new { @class = "text-danger" })
+                </div>
+                <div class="mb-3 col-md-6">
+                    @Html.LabelFor(model => model.Yetki, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <input class="form-control" type="text" name="Yetki" id="Yetki" />
+                    @Html.ValidationMessageFor(model => model.Yetki, "", new { @class = "text-danger" })
+                </div>
+                <div class="mb-3 col-md-6">
+                    @Html.LabelFor(model => model.AdSoyad, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <input class="form-control" type="text" name="AdSoyad" id="AdSoyad" />
+                    @Html.ValidationMessageFor(model => model.AdSoyad, "", new { @class = "text-danger" })
+                </div>
+                <div class="mb-3 col-md-6">
+                    @Html.LabelFor(model => model.TCNO, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <input class="form-control" type="text" name="TCNO" id="TCNO" />
+                    @Html.ValidationMessageFor(model => model.TCNO, "", new { @class = "text-danger" })
+                </div>
+                <div class="mb-3 col-md-6">
+                    @Html.LabelFor(model => model.Departman, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <select name="Departman" id="Departman" class="form-control">
+                       
+                        @foreach (var departman in @ViewBag.liste)
+                        {
+                            
+                            <option value="@departman.DepartmanAdi">@departman.DepartmanAdi</option>
+                        }
+
+
+                    </select>
+                    @Html.ValidationMessageFor(model => model.Departman, "", new { @class = "text-danger" })
+                </div>
+                <div class="mb-3 col-md-6">
+                    @Html.LabelFor(model => model.Gorev, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <input class="form-control" type="text" name="Gorev" id="Gorev" />
+                    @Html.ValidationMessageFor(model => model.Gorev, "", new { @class = "text-danger" })
+                </div>
+                <div class="mb-3 col-md-6">
+                    @Html.LabelFor(model => model.PozisyonAciklama, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <input class="form-control" type="text" name="PozisyonAciklama" id="PozisyonAciklama" />
+                    @Html.ValidationMessageFor(model => model.PozisyonAciklama, "", new { @class = "text-danger" })
+                </div>
+                <div class="mb-3 col-md-6">
+                    @Html.LabelFor(model => model.TelNo, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <input class="form-control" type="text" name="TelNo" id="TelNo" />
+                    @Html.ValidationMessageFor(model => model.TelNo, "", new { @class = "text-danger" })
+                </div>
+                <div class="mb-3 col-md-6">
+                    @Html.LabelFor(model => model.Adres, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <input class="form-control" type="text" name="Adres" id="Adres" />
+                    @Html.ValidationMessageFor(model => model.Adres, "", new { @class = "text-danger" })
+                </div>
+                <div class="mb-3 col-md-6">
+                    @Html.LabelFor(model => model.MedeniHal, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <input class="form-control" type="text" name="MedeniHal" id="MedeniHal" />
+                    @Html.ValidationMessageFor(model => model.MedeniHal, "", new { @class = "text-danger" })
+                </div>
+                <div class="mb-3 col-md-6">
+                    @Html.LabelFor(model => model.YakinBilgisi, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <input class="form-control" type="text" name="YakinBilgisi" id="YakinBilgisi" />
+                    @Html.ValidationMessageFor(model => model.YakinBilgisi, "", new { @class = "text-danger" })
+                </div>
+                <div class="mb-3 col-md-6">
+                    @Html.LabelFor(model => model.YakinTC, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <input class="form-control" type="text" name="YakinTc" id="YakinTc" />
+                    @Html.ValidationMessageFor(model => model.YakinTC, "", new { @class = "text-danger" })
+                </div>
+                <div class="mb-3 col-md-6">
+                    @Html.LabelFor(model => model.YakinAdSoyad, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <input class="form-control" type="text" name="YakinAdSoyad" id="YakinAdSoyad" />
+                    @Html.ValidationMessageFor(model => model.YakinAdSoyad, "", new { @class = "text-danger" })
+                </div>
+                <div class="mb-3 col-md-6">
+                    @Html.LabelFor(model => model.YakinTel, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <input class="form-control" type="text" name="YakinTel" id="YakinTel" />
+                    @Html.ValidationMessageFor(model => model.YakinTel, "", new { @class = "text-danger" })
+                </div>
+                <div class="mb-3 col-md-6">
+                    @Html.LabelFor(model => model.DogumTarihi, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <input class="form-control" type="date" name="DogumTarihi" id="DogumTarihi" />
+                    @Html.ValidationMessageFor(model => model.DogumTarihi, "", new { @class = "text-danger", @type = "datetime" })
+                </div>
+                <div class="mb-3 col-md-6">
+                    @Html.LabelFor(model => model.IseGirisTarihi, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <input class="form-control" type="date" name="IseGirisTarihi" id="IseGirisTarihi" />
+                    @Html.ValidationMessageFor(model => model.IseGirisTarihi, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="mt-2">
+                <a href="/PersonelBilgileris/Index"><button type="button" class="btn rounded-pill btn-warning">Anasayfaya Dön</button></a>
+                <button type="submit" class="btn rounded-pill btn-primary">Ekle</button>
+
+            </div>
+        }
+    </div>
+    <!-- /Account -->
+</div>

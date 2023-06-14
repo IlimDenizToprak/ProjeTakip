@@ -33,6 +33,9 @@ namespace Projem.Models.Personel
         [StringLength(50, ErrorMessage = "Maksimum Uzunluk 50 Karakterden Fazla Olamaz")]
         public string AdSoyad { get; set; }
 
+        [DisplayName("PERSONEL GÖRSELİ")]
+        public string PersonelGorseli { get; set; }
+
         [DisplayName("TC KİMLİK NO")]
         [StringLength(15, ErrorMessage = "Maksimum Uzunluk 15 Karakterden Fazla Olamaz")]
         public string TCNO { get; set; }

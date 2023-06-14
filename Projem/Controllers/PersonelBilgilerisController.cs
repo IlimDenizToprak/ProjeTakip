@@ -22,7 +22,7 @@ namespace Projem.Controllers
         }
 
         // GET: PersonelBilgileris/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int? id) // bu sayfa detay sayfası
         {
             if (id == null)
             {
@@ -48,7 +48,7 @@ namespace Projem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PersonelBilgileriId,Eposta,Sifre,Yetki,AdSoyad,TCNO,Departman,Gorev,PozisyonAciklama,TelNo,Adres,MedeniHal,YakinBilgisi,YakinTC,YakinAdSoyad,YakinTel,DogumTarihi,IseGirisTarihi")] PersonelBilgileri personelBilgileri)
+        public ActionResult Create(PersonelBilgileri personelBilgileri)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +80,7 @@ namespace Projem.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PersonelBilgileriId,Eposta,Sifre,Yetki,AdSoyad,TCNO,Departman,Gorev,PozisyonAciklama,TelNo,Adres,MedeniHal,YakinBilgisi,YakinTC,YakinAdSoyad,YakinTel,DogumTarihi,IseGirisTarihi")] PersonelBilgileri personelBilgileri)
+        public ActionResult Edit(PersonelBilgileri personelBilgileri)
         {
             if (ModelState.IsValid)
             {
@@ -98,7 +98,7 @@ namespace Projem.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PersonelBilgileri personelBilgileri = db.PersonelBilgileris.Find(id);
+            PersonelBilgileri personelBilgileri = db.PersonelBilgileris.Find(id); //personel controllerındayım PersonelBilgileri tablosuna bağlanmış anladın mı
             db.PersonelBilgileris.Remove(personelBilgileri);
             db.SaveChanges();
             return RedirectToAction("Index");

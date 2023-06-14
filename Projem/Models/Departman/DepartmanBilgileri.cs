@@ -8,7 +8,7 @@ using System.Web;
 namespace Projem.Models.Departman
 {
     public class DepartmanBilgileri
-    {
+    {   
         [Key] // Primary Key Olarak Görebiliriz
         public int DepartmanBilgileriId { get; set; }
 

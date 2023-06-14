@@ -98,9 +98,9 @@ namespace Projem.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DepartmanBilgileri departmanBilgileri = db.DepartmanBilgileris.Find(id);
-            db.DepartmanBilgileris.Remove(departmanBilgileri);
-            db.SaveChanges();
+            DepartmanBilgileri departmanBilgileri = db.DepartmanBilgileris.Find(id); //seçili id yi buluyor bu satırda bak departman controllerındayım DepartmanBilgileri yazıyor
+            db.DepartmanBilgileris.Remove(departmanBilgileri);//sonra veritabanından kaldır emiri veriyor
+            db.SaveChanges();//ve siliyor
             return RedirectToAction("Index");
         }
 

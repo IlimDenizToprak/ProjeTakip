@@ -12,13 +12,13 @@
                         <thead>
                             <tr>
                                 <th>
-                                    
+
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PersonelGorseli)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.AdSoyad)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Eposta)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.TelNo)
@@ -45,8 +45,8 @@
                             {
                                 <tr>
                                     <td>@i</td>
+                                    <td><img style="width:70px; height:70px;" src="@Html.DisplayFor(modelItem => item.PersonelGorseli)"/></td>
                                     <td>@Html.DisplayFor(modelItem => item.AdSoyad)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.Eposta)</td>
                                     <td>@Html.DisplayFor(modelItem => item.TelNo)</td>
                                     <td>@Html.DisplayFor(modelItem => item.Yetki)</td>
                                     <td><span class="badge bg-label-danger me-1">@Html.DisplayFor(modelItem => item.Departman)</span></td>

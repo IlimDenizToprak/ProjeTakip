@@ -21,6 +21,11 @@ namespace Projem.Controllers
             return View(db.PersonelBilgileris.ToList());
         }
 
+        public ActionResult PersonelKartlar()
+        {
+            return View(db.PersonelBilgileris.ToList());
+        }
+
         // GET: PersonelBilgileris/Details/5
         public ActionResult Details(int? id) // bu sayfa detay sayfası
         {
@@ -63,6 +68,7 @@ namespace Projem.Controllers
         // GET: PersonelBilgileris/Edit/5
         public ActionResult Edit(int? id)
         {
+            ViewBag.liste = db.DepartmanBilgileris.ToList();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

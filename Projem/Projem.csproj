@@ -462,11 +462,9 @@
     <Content Include="Views\DepartmanBilgileris\Edit.cshtml" />
     <Content Include="Views\DepartmanBilgileris\Index.cshtml" />
     <Content Include="Views\PersonelBilgileris\PersonelKartlar.cshtml" />
-    <Content Include="Views\PersonelProjeleris\Create.cshtml" />
-    <Content Include="Views\PersonelProjeleris\Delete.cshtml" />
-    <Content Include="Views\PersonelProjeleris\Details.cshtml" />
-    <Content Include="Views\PersonelProjeleris\Edit.cshtml" />
     <Content Include="Views\PersonelProjeleris\Index.cshtml" />
+    <Content Include="Views\PersonelProjeleris\Create.cshtml" />
+    <Content Include="Views\PersonelProjeleris\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

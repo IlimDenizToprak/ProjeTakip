@@ -16,6 +16,7 @@
             @Html.AntiForgeryToken()
             <div class="row">
                 <div class="mb-3 col-md-6">
+                    <label class="control-label col-md-3">DEPARTMAN ADI</label>
                     @Html.LabelFor(model => model.DepartmanAdi, htmlAttributes: new { @class = "control-label col-md-3" })
                     <input class="form-control" type="text" name="DepartmanAdi" id="DepartmanAdi" />
                     @Html.ValidationMessageFor(model => model.DepartmanAdi, "", new { @class = "text-danger" })

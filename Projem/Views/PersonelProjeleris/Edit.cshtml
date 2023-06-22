@@ -1,0 +1,63 @@
+﻿@model Projem.Models.ProjeTakip.PersonelProjeleri
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="card mb-4">
+        <h5 class="card-header">Proje Düzenle</h5>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.PersonelProjeId)
+
+        <hr class="my-0">
+        <div class="card-body">
+
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                    <label class="control-label col-md-4">Proje Başlık</label>
+                    <input type="text" name="ProjeBaslik" class="form-control" value="@Model.ProjeBaslik" />
+                    @Html.ValidationMessageFor(model => model.ProjeBaslik, "", new { @class = "text-danger" })
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label class="control-label col-md-4">Proje Açıklama</label>
+                    <input type="text" name="ProjeAciklama" class="form-control" value="@Model.ProjeAciklama" />
+                    @Html.ValidationMessageFor(model => model.ProjeAciklama, "", new { @class = "text-danger" })
+                    <input type="hidden" name="OlusturmaTarihi" class="form-control" value="@Model.OlusturmaTarihi" />
+                    @Html.ValidationMessageFor(model => model.OlusturmaTarihi, "", new { @class = "text-danger" })
+                </div>
+               
+                <div class="mb-3 col-md-6">
+                    <label class="control-label col-md-4">Öncelik Durumu</label>
+                    <select name="OncelikDurumu" value="@Model.OncelikDurumu" class="form-control">
+                        <option value="Yüksek Öncelikli">Yüksek Öncelikli</option>
+                        <option value="Orta Öncelikli">Orta Öncelikli</option>
+                        <option value="Düşük Öncelikli">Düşük Öncelikli</option>
+                    </select>
+                    @Html.ValidationMessageFor(model => model.OncelikDurumu, "", new { @class = "text-danger" })
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label class="control-label col-md-4">Tamamlanma Oranı</label>
+                    <input name="TamamlanmaOrani" type="range" class="form-range" value="@Model.TamamlanmaOrani" min="0" max="100" step="25" id="formRange3">
+                    @Html.ValidationMessageFor(model => model.TamamlanmaOrani, "", new { @class = "text-danger" })
+                </div>
+              
+
+
+            </div>
+            <a href="/PersonelProjeleris/Index"><button type="button" class="btn rounded-pill btn-warning">Anasayfaya Dön</button></a>
+            <input type="submit" value="Kaydet" class="btn rounded-pill btn-primary" />
+
+        </div>
+
+        <!-- /Account -->
+    </div>
+
+
+
+}
+
+

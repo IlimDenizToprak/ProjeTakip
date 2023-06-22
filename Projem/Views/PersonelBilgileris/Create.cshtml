@@ -49,7 +49,7 @@
                 @Html.LabelFor(model => model.Departman, htmlAttributes: new { @class = "control-label col-md-3" })
                 <select name="Departman" id="Departman" class="form-control">
 
-                    @foreach (var departman in @ViewBag.liste)
+                    @foreach (var departman in @Depart)
                     {
 
                         <option value="@departman.DepartmanAdi">@departman.DepartmanAdi</option>

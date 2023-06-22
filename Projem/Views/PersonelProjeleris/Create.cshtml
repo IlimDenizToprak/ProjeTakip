@@ -1,0 +1,72 @@
+﻿@model Projem.Models.ProjeTakip.PersonelProjeleri
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card mb-4">
+    <h5 class="card-header">Proje Ata</h5>
+    <!-- Account -->
+
+    <hr class="my-0">
+    <div class="card-body">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="mb-3 col-md-6">
+                <label control-label col-md-4>PROJE BAŞLIĞI</label>
+                <input class="form-control" type="text" name="ProjeBaslik" id="ProjeBaslik" />
+                @Html.ValidationMessageFor(model => model.ProjeBaslik, "", new { @class = "text-danger" })
+            </div>
+            <div class="mb-3 col-md-6">
+                <label control-label col-md-4>PROJE AÇIKLAMA</label>
+                <input class="form-control" type="text" name="ProjeAciklama" id="ProjeAciklama" />
+                @Html.ValidationMessageFor(model => model.ProjeAciklama, "", new { @class = "text-danger" })
+            </div>
+            <div class="mb-3 col-md-6">
+                <label control-label col-md-4>OLUŞTURMA TARİHİ</label>
+                <input class="form-control" type="date" name="OlusturmaTarihi" id="OlusturmaTarihi" />
+                @Html.ValidationMessageFor(model => model.OlusturmaTarihi, "", new { @class = "text-danger" })
+            </div>
+            <div class="mb-3 col-md-6">
+                <label control-label col-md-4>ÖNCELİK DURUMU</label>
+                <select class="form-control" name="OncelikDurumu">
+                    <option value="Yüksek Öncelikli">Yüksek Öncelikli</option>
+                    <option value="Orta Öncelikli">Orta Öncelikli</option>
+                    <option value="Düşük Öncelikli">Düşük Öncelikli</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.OncelikDurumu, "", new { @class = "text-danger" })
+            </div>
+            <div id="insert-section" class="row">
+                
+                <div id="personel-select" class="col-lg-12">
+                    @Html.DropDownList("PersonelBilgileriId", null, htmlAttributes: new { @class = "form-control" })
+                    <i onclick="PersonelEkle()" class="bx bx-plus"></i>
+                   
+                </div>
+                
+            </div>
+            
+        </div>
+            <div class="mt-2">
+                <a href="/PersonelProjeleris/Index"><button type="button" class="btn rounded-pill btn-warning">Anasayfaya Dön</button></a>
+                <button type="submit" class="btn rounded-pill btn-primary">Ekle</button>
+
+            </div>
+        }
+    </div>
+    <!-- /Account -->
+</div>
+
+<script>
+    function PersonelEkle() {
+        var parentDiv = $("#insert-section");
+        var oldSelectDiv = $("#personel-select");
+        var newSelectDiv = oldSelectDiv.clone(true);
+        oldSelectDiv.find(".bx plus").remove();
+        parentDiv.append(newSelectDiv);
+        oldSelectDiv = newSelectDiv;
+    }
+</script>

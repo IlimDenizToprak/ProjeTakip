@@ -44,8 +44,8 @@
             </div>
             <div class="mb-3 col-md-6">
                 @Html.LabelFor(model => model.Departman, htmlAttributes: new { @class = "control-label col-md-4" })
-                <select name="Departman" id="Departman" class="form-control">
-                    <option value="@Html.DisplayFor(model => model.Departman)">@Html.DisplayFor(model => model.Departman)</option>
+                <select name="Departman" id="Departman" class="form-control" value="@Model.Departman">
+                    
                     @foreach (var departman in @ViewBag.liste)
                     {
 
